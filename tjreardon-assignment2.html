@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
+  <!-- luckily, no other student named theirs like this, you should have added
+       your username to the file name -->
+  <script type="text/javascript" src="validate.js"></script>
+<style>
+div
+{
+width:100px;
+height:100px;
+background:red;
+animation:myfirst 10s;
+-webkit-animation:myfirst 10s; /* Safari and Chrome */
+}  
+  @keyframes myfirst
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background: red;}
+to {background: yellow;}
+}
+</style>
+
+</head>
+<body>
+  <div id="content">
+    <!-- ** -1 ** no animation -->
+    <!-- ** -1 ** no DOM manipulation -->
+    <!-- HTML is quirky in places... one of those quirks is that with a post submission, you must have a / at the end of the action for it to submit properly -->
+    <form name="230Form" action="http://symlink.dk/code/php/submit" onsubmit="return validate()" method="post">
+      
+      <!-- validation is through Dom event onsubmit -->
+      
+      <!-- make sure you close all tags
+	   <br></br> or the shorthand <br />
+	   same for input, etc -->
+      First name: <input type="text" name="fname"><br>
+      Last name: <input type="text" name="lname"><br>
+      
+      Birth Year: <input type="date" name="year"><br>
+
+      Birth Month: <input type="month" name="birthmonth"><br>
+      
+      E-mail: <input type="email" name="email"><br>
+      <input type="submit" value="Submit" >
+    </form> 
+  </div>
+</body>
+</html>

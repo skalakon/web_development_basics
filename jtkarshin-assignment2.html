@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
+  <script type="text/javascript" src="jtkarshin-script.js"></script>
+</head>
+<body>
+  <div id="content">
+    <form method="post" action="http://symlink.dk/code/php/submit/" onsubmit="return validate()">
+      <b>Sample Form</b><br><br>
+      Adventurer Name:<br>
+      <!-- make sure you close all tags <br></br> or the shorthand <br />
+	   same with input tags -->
+      <input name="name" id="name" type="text"><br><br>
+      Level:<br>
+      <input name="level" id="level" type="text"><br><br>
+      Home Town:<br>
+      <input name="town" id="town" type="text"><br><br>
+      Class:<br>
+      <select name="class" id="class">
+	<option value="wizard">Wizard</option>
+	<option value="warrior">Warrior</option>
+        <option value="ranger">Ranger</option>
+      </select><br><br>
+      Gender:<br>
+      <input name="gender" type="radio" id="gender" value="male" checked>Male<br>
+      <input name="gender" type="radio" id="gender" value="female">Female<br><br>
+      <input name="surprise" id="surprise" type="button" value="Click Me" onclick="$('#surpriseDiv').slideToggle();"><br><br>
+      <div id="surpriseDiv" style="display: none;">
+        Surprise!
+      </div>
+      <br><input type="submit">
+    </form>
+  </div>
+</body>
+</html>

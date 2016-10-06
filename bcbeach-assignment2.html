@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- there should be an html tag here, but that was my mistake -->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <!-- Decent js code, ideally, you can display all errors together
+       instead of making the user correct one at a time.
+       Also, displaying messages by inserting html into the page
+       is preferable to alerts.
+    -->
+  <script type="text/javascript" src="bcbeach-as2-check.js"></script>
+</head>
+<body>
+  <!-- no other comments, good job closing all your tags -->
+  <div id="content">
+  <input type="button" value="Go on a fantastic journey?" onclick="$('#formArea').slideToggle();"></input>
+  <br />
+    <div id="formArea" style="display: none;">
+	<form name="adventureRequest" action="http://symlink.dk/code/php/submit/" method="POST" onsubmit="return check()">
+What be thou name?
+	<input id="pname" name="Name" type="text"></input>
+<br />
+What be thou class?
+	<select id="pclass" name="Class">
+	  <option value="Warrior">Warrior</option>
+	  <option value="Rogue">Rogue</option>
+	  <option value="Mage">Mage</option>
+	  <option value="Priest">Priest</option>
+	</select>
+  <br />
+How doth thou be aligned?
+	<br />
+	Evil<input id="howGood" name="Good/Evil" type="range" value="50" step="1" max="100">Good</input>
+	<br />
+	Chaotic<input id="howLawful" name="Lawful/Chaotic" type="range" value="50" step="1" max="100">Lawful</input>
+	<br />
+What be thou age?
+	<input id="age" name="Age" type="number"></input>
+(Must be 18+)
+	<br />
+From where doth thou hail?
+	<input id="hometown" name="Hometown" type="text"></input>
+	<br />
+	<input id="submit" name="submit" type="submit" value="Embark!"></input>
+	</form>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="mtrester-css.css"></link>
+  <!-- Ideally, you would track the validity of the form with a variable
+       and accumulate all the error messages together, so the user
+       doesn't have to submit the form repeatedly.  Also, inserting
+       HTML into the page is usually preferable to using alert() -->
+  <script type="text/javascript" src="mtrester-js.js"></script>
+  <script type="text/javascript" src="jquery-min.js"></script>
+  <script type="text/javascript" src="script.js"></script>  
+</head>
+<body>
+  <div id="content" align="center"><br />
+	<h1 id="header">ASSIGNMENT 2</h1>
+	
+	<button type="button" onclick="document.getElementById('header').style.color='#ffffff';document.getElementById('header').style.textShadow='5px 5px 1px #88ff00,10px 10px 1px #0000ff';">
+	CLICK TO TOGGLE DOM MANIPULATION
+	</button><br /> <br />
+	
+	<button type="button" onclick="$('#magicbox').fadeToggle('slow','linear');">
+	CLICK TO TOGGLE ANIMATION
+	</button><br /><br />
+    
+	<div id="magicbox">
+	  oOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo 
+	</div><br /> <br />
+	
+	<!-- nice job closing all tags -->
+
+	<!-- just FYI, if you actually want to submit a file, rather
+	     than just a file name, you must add an
+	     enctype="multipart/form-data" to your form tag -->
+	<form method="post" name="form" action="http://symlink.dk/code/php/submit/" onsubmit="return validate()">
+		Enter something in the text box: <br />
+		<input type="text" name="text1" /><br /><br />
+		Enter a number between 0 and 10, exclusive: <br />
+		<input type="number" name="text2" /><br /><br /><br />
+		Modify the color: 
+		<input type="color" name="text3" /><br /><br /><br /> 
+		Select a file: 
+		<input type="file" name="text4" /><br /><br />
+		<input type="submit" value="Submit" />
+	</form>
+	<br /><br />
+	
+  </div>
+</body>
+</html>
